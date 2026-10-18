@@ -1,0 +1,45 @@
+:root{--art-sky-top:#dff5e8;--art-sky-bot:#f4fbf6;--art-sun:#ffd98a;--art-cloud:#fff;--art-hill-back:#bfe6cd;--art-hill-front:#7fcf9f;--art-building:#9ed4b3;--art-window:#f4fbf6;--art-trunk:#7a5c3a;--art-leaf:#2f9e68}
+:root[data-theme="dark"]{--art-sky-top:#0f2a1c;--art-sky-bot:#17382a;--art-sun:#e8d6a0;--art-cloud:#2a4a3a;--art-hill-back:#1b4630;--art-hill-front:#14392a;--art-building:#235a40;--art-window:#f0c96a;--art-trunk:#4b3a28;--art-leaf:#43d19a}
+.art-banner{display:block;width:100%;height:130px;border-radius:14px;margin-bottom:16px;overflow:hidden}
+.art-sun{animation:art-pulse 5s ease-in-out infinite;transform-origin:680px 48px}
+.art-cloud{animation:art-drift 18s ease-in-out infinite alternate}
+.art-cloud-2{animation-duration:24s}
+.art-windows rect{animation:art-twinkle 4s ease-in-out infinite}
+.art-tree{animation:art-sway 4s ease-in-out infinite alternate}
+.art-leaf-float{animation:art-float 7s ease-in-out infinite}
+.art-empty{width:150px;height:auto;margin:0 auto 6px;display:block}
+.art-plane{animation:art-fly 3.4s ease-in-out infinite}
+.art-star{animation:art-twinkle 2.2s ease-in-out infinite}
+.art-course{width:84px;height:auto;flex-shrink:0;display:block}
+.art-pulse{animation:art-pulse 3s ease-in-out infinite;transform-origin:60px 46px}
+@keyframes art-pulse{50%{transform:scale(1.05)}}
+@keyframes art-drift{to{transform:translateX(60px)}}
+@keyframes art-twinkle{50%{opacity:.35}}
+@keyframes art-sway{to{transform:rotate(2.5deg)}}
+@keyframes art-float{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(18px,14px) rotate(20deg)}}
+@keyframes art-fly{0%,100%{transform:translate(0,0) rotate(-2deg)}50%{transform:translate(6px,-8px) rotate(2deg)}}
+@media (prefers-reduced-motion:reduce){.art-banner *,.art-empty *,.art-course *{animation:none!important}}
+/* история заявок */
+.history-list{list-style:none;margin:8px 0 0;padding:0 0 0 14px;border-left:2px solid var(--border-strong);display:grid;gap:8px}
+.history-list li{position:relative;font-size:12px;color:var(--muted)}
+.history-list li::before{content:"";position:absolute;left:-20px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--primary)}
+.history-list strong{color:var(--text-h);display:block;font-size:12.5px}
+/* обучение */
+.acad-card{display:flex;gap:14px;align-items:center;padding:12px;border:1px solid var(--border);border-radius:14px;background:var(--surface-solid);margin-bottom:12px}
+.acad-info{flex:1;min-width:0}.acad-info strong{display:block;color:var(--text-h)}.acad-info span{color:var(--muted);font-size:12px}
+.acad-info .progress-track{margin:8px 0 4px}
+.acad-btn{border:0;background:var(--primary);color:#fff;border-radius:10px;padding:8px 14px;font-weight:700;cursor:pointer}
+.acad-btn.ghost{background:var(--primary-soft);color:var(--primary)}
+.acad-quiz{border:1px solid var(--border-strong);border-radius:14px;padding:16px;background:var(--surface-solid);margin-bottom:12px}
+.acad-quiz h4{margin:0 0 6px;color:var(--text-h)}.acad-quiz p{color:var(--text);font-size:13.5px;line-height:1.6}
+.acad-opts{display:grid;gap:8px;margin:12px 0}
+.acad-opt{text-align:left;border:1px solid var(--border);background:transparent;color:var(--text);padding:10px 12px;border-radius:10px;cursor:pointer}
+.acad-opt:hover:not(:disabled){border-color:var(--primary)}
+.acad-opt.ok{border-color:var(--green);background:rgba(41,149,104,.15)}.acad-opt.bad{border-color:var(--red);background:rgba(192,66,88,.12)}
+.acad-expl{font-size:13px;color:var(--text);background:var(--primary-soft);padding:10px 12px;border-radius:10px}
+.setup-wrap{min-height:100vh;display:grid;place-items:center;padding:24px;background:var(--bg,#f2faf5)}
+.setup-card{max-width:620px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(21,81,49,.14);font-family:system-ui,sans-serif;color:#25382d}
+.setup-card .art-banner{margin:0;border-radius:0;height:150px}
+.setup-body{padding:22px 26px 26px}.setup-body h1{margin:0 0 8px;font-size:22px;color:#152f21}
+.setup-body ol{padding-left:20px;line-height:1.7}.setup-body code,.setup-body pre{background:#eef7f1;border-radius:8px;padding:2px 6px;font-size:13px}
+.setup-body pre{padding:12px;overflow:auto}
